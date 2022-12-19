@@ -57,36 +57,36 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [School Library OOP] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+> A library management made to automate the overall system of a library
 
-**[your_project__name]** is a...
+**School Library OOP** 
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+> Ruby
 
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://reactjs.org/">None</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://expressjs.com/">None</a></li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://www.postgresql.org/">None</a></li>
   </ul>
 </details>
 
@@ -94,11 +94,9 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+> Currently there are no features that have been inserted.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,9 +104,8 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+> Project is in progress and not deployed yet
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,13 +113,18 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
+> To start and run this project
+
+- bundle install
+- ruby filename.rb
 
 To get a local copy up and running, follow these steps.
 
+- git clone https://github.com/NatanimA/School-library-OOP.git
+
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project you don't need any prerequisites:
 
 <!--
 Example command:
@@ -136,6 +138,8 @@ Example command:
 
 Clone this repository to your desired folder:
 
+- git clone https://github.com/NatanimA/School-library-OOP.git
+
 <!--
 Example commands:
 
@@ -148,6 +152,8 @@ Example commands:
 ### Install
 
 Install this project with:
+
+- No need of installation
 
 <!--
 Example command:
@@ -169,10 +175,13 @@ Example command:
   rails server
 ```
 --->
-
+```
+git clone https://github.com/NatanimA/School-library-OOP.git
+```
 ### Run tests
 
 To run tests, run the following command:
+- No tests have been done so far
 
 <!--
 Example command:
@@ -202,17 +211,12 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Natanim Abesha**
 
-👤 **Author2**
+- GitHub: [@githubhandle](https://github.com/NatanimA)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/natanim-abesha-04a39823a)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
