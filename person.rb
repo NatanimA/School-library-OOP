@@ -28,6 +28,6 @@ class Person < Nameable
   end
 
   def add_rental(date, book)
-     @rentals.push(Rental.new(date, book, self)) unless @rentals.include?(Rental.new(date, book, self))
+    @rentals.push(Rental.new(date, book, self)) unless @rentals.include?(Rental.new(date, book, self))
   end
 end
