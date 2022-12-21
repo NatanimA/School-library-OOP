@@ -61,6 +61,9 @@ After you're finished please remove all the comments and instructions!
 
 > A library management made to automate the overall system of a library
 
+
+![Alt text](UML%20class.jpeg)
+
 **School Library OOP** 
 
 ## 🛠 Built With <a name="built-with"></a>
