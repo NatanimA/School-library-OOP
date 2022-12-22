@@ -59,7 +59,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 School Library OOP <a name="about-project"></a>
 
-> A library management made to automate the overall system of a library
+> A library management made to automate the overall system of a library, where there are users being teacher and students where they can make rentals on a book.
 
 
 ![Alt text](UML%20class.jpeg)
