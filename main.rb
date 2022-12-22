@@ -36,6 +36,7 @@ def option
     list_all_rentals
   when '7'
     puts 'Thank you for using the app!'
+    return
   else
     puts 'Invalid input. Please try again'
   end
