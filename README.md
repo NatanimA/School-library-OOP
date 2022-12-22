@@ -57,7 +57,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [School Library OOP] <a name="about-project"></a>
+# 📖 School Library OOP <a name="about-project"></a>
 
 > A library management made to automate the overall system of a library
 
