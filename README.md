@@ -220,6 +220,11 @@ Example:
 - GitHub: [@githubhandle](https://github.com/NatanimA)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/natanim-abesha-04a39823a)
 
+👤 **Emem Ekpo**
+
+- GitHub: [@ecekpo](https://https://github.com/ecekpo)
+- Twitter: [@ememcookey](https://twitter.com/ememcookey)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/emem-ekpo)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
