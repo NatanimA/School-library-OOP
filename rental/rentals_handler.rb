@@ -23,12 +23,11 @@ class RentalsHandler
       puts 'PLease type your ID (See from the list of people below): '
       @people.each { |person| puts "[#{person.class}] Name: #{person.name} | Age: #{person.age} | ID: #{person.id}" }
       identity = gets.chomp.to_i
-      individual = []
-      if identity <= 10
-        individual = @people[identity-1]
-      else
-        individual = @people.select { |person| person.id == identity }.first
-      end
+      individual = if identity <= 10
+                     @people[identity - 1]
+                   else
+                     @people.select { |person| person.id == identity }.first
+                   end
 
       print 'Enter the date[yyyy-mm-dd]: '
       date = gets.chomp.to_s
