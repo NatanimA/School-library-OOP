@@ -1,6 +1,6 @@
-require_relative './books_handler'
-require_relative './persons_handler'
-require_relative './rentals_handler'
+require_relative './book/books_handler'
+require_relative './person/persons_handler'
+require_relative './rental/rentals_handler'
 
 class App
   def initialize
