@@ -1,15 +1,15 @@
 require_relative './person'
 require_relative './student'
-require_relative './teacher.rb'
+require_relative './teacher'
 
 class PersonsHandler
-    attr_accessor :people
+  attr_accessor :people
 
-    def initialize
-        @people = []
-    end
+  def initialize
+    @people = []
+  end
 
-    def list_all_people
+  def list_all_people
     puts 'Sorry, there is no registered users!' if @people.empty?
     puts "There are #{@people.count} people in the system"
     @people.each_with_index do |person, index|
@@ -64,5 +64,4 @@ class PersonsHandler
     puts ''
     puts "Student is created successfully. Your ID is #{student.id}"
   end
-
 end

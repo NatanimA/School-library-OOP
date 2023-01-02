@@ -1,11 +1,12 @@
 require_relative './books_handler'
 require_relative './persons_handler'
+require_relative './rentals_handler'
 
 class App
   def initialize
     @books = BooksHandler.new
     @people = PersonsHandler.new
-    @rentals = RentalsHandler.new(@books,@people)
+    @rentals = RentalsHandler.new(@books.books, @people.people)
   end
 
   def interface_options
@@ -48,5 +49,4 @@ class App
   def start_console
     option
   end
-
 end

@@ -1,15 +1,15 @@
 require_relative './rental'
 
 class RentalsHandler
-    attr_accessor :rentals, :people , :books
+  attr_accessor :rentals, :people, :books
 
-    def initialize(books, person)
+  def initialize(books, person)
     @rentals = []
     @books = books
     @people = person
-    end
+  end
 
-    def create_rental
+  def create_rental
     if @books.empty? && @people.empty?
       puts 'There are no books and people in the system'
     else
@@ -52,6 +52,4 @@ class RentalsHandler
       end
     end
   end
-
-
 end
