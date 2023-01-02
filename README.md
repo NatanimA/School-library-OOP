@@ -59,7 +59,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 School Library OOP <a name="about-project"></a>
 
-> A library management made to automate the overall system of a library
+> A library management made to automate the overall system of a library, where there are users being teacher and students where they can make rentals on a book.
 
 
 ![Alt text](UML%20class.jpeg)
@@ -220,6 +220,11 @@ Example:
 - GitHub: [@githubhandle](https://github.com/NatanimA)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/natanim-abesha-04a39823a)
 
+👤 **Emem Ekpo**
+
+- GitHub: [@ecekpo](https://https://github.com/ecekpo)
+- Twitter: [@ememcookey](https://twitter.com/ememcookey)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/emem-ekpo)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
