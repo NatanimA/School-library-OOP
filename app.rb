@@ -14,8 +14,8 @@ class App
   end
 
   def interface_options
-  puts ''
-  puts " Please choose among the options below by pressing its corresponding number:
+    puts ''
+    puts " Please choose among the options below by pressing its corresponding number:
             1. List all books
             2. List all people
             3. Create person account
@@ -23,43 +23,35 @@ class App
             5. Create a rental
             6. List all rentals for particular person
             7. Exit"
-  gets.chomp
-end
+    gets.chomp
+  end
 
   def option
-  case interface_options
-  when '1'
-    list_all_books
-  when '2'
-    list_all_people
-  when '3'
-    create_person
-  when 
-    '4'
-    create_book
-  when '5'
-    create_rental
-  when '6'
-    list_all_rentals
-  when '7'
-    puts 'Thank you for using the app!'
-    return
-  else
-    puts 'Invalid input. Please try again'
-  end
-  option
-end
-
-  def start_console
+    case interface_options
+    when '1'
+      list_all_books
+    when '2'
+      list_all_people
+    when '3'
+      create_person
+    when
+      '4'
+      create_book
+    when '5'
+      create_rental
+    when '6'
+      list_all_rentals
+    when '7'
+      puts 'Thank you for using the app!'
+      return
+    else
+      puts 'Invalid input. Please try again'
+    end
     option
   end
 
-  def list_all_books
-    puts 'Sorry, No book(s) found!' if @books.empty?
-    puts "There are #{@books.count} book(s) in the system"
-    @books.each_with_index do |book, index|
-      puts "#{index + 1}) Book Title: \"#{book.title}\" | Author: #{book.author}"
-    end
+  def start_console
+    option
   end
 
   def list_all_people
@@ -116,23 +108,6 @@ end
     @people << student
     puts ''
     puts "Student is created successfully. Your ID is #{student.id}"
-  end
-
-  def create_book
-    print 'Enter the book title: '
-    title = gets.chomp
-    print 'Enter the book author: '
-    author = gets.chomp
-
-    if title.strip != '' && author.strip != ''
-      book = Book.new(title, author)
-      @books << book
-      puts ''
-      puts 'Book is created successfully'
-    else
-      puts ''
-      puts 'Please provide title and author of the book'
-    end
   end
 
   def create_rental
