@@ -1,15 +1,10 @@
-require './student'
-require './classroom'
-require './book'
-require './rental'
-require './teacher'
-require './person'
-require './decorators'
+require_relative './books_handler'
+require_relative './persons_handler'
 
 class App
   def initialize
-    @books = []
-    @people = []
+    @books = BooksHandler.new
+    @people = PersonsHandler.new
     @rentals = []
   end
 
@@ -29,14 +24,14 @@ class App
   def option
     case interface_options
     when '1'
-      list_all_books
+      @books.list_all_books
     when '2'
-      list_all_people
+      @people.list_all_people
     when '3'
-      create_person
+      @people.create_person
     when
       '4'
-      create_book
+      @books.create_book
     when '5'
       create_rental
     when '6'
@@ -54,62 +49,7 @@ class App
     option
   end
 
-  def list_all_people
-    puts 'Sorry, there is no registered users!' if @people.empty?
-    puts "There are #{@people.count} people in the system"
-    @people.each_with_index do |person, index|
-      puts "#{index + 1})[#{person.class}] Name: #{person.name} | Age: #{person.age} | ID: #{person.id}"
-    end
-  end
-
-  def create_person
-    print 'To create teacher account, press 1. To create student account, press 2:  '
-    option = gets.chomp
-    print 'Enter your name: '
-    name = gets.chomp
-    print 'Enter your age: '
-    age = gets.chomp.to_i
-
-    case option
-    when '1'
-      print 'Enter your specialization: '
-      spec = gets.chomp
-      create_teacher(spec, age, name)
-    when '2'
-      print 'Enter your class: '
-      class_grade = gets.chomp
-      create_student(class_grade, age, name)
-    else
-      puts ''
-      puts 'Invalid input. Please try again'
-      nil
-    end
-  end
-
-  def create_teacher(specialization, age, name)
-    teacher = Teacher.new(specialization, age, name)
-    @people << teacher
-    puts ''
-    puts "Teacher is created successfully. Your ID is #{teacher.id}"
-  end
-
-  def create_student(class_grade, age, name)
-    print 'Do you have parent permission? [Y/N]'
-    choice = gets.chomp.downcase
-    case choice
-    when 'y'
-      student = Student.new(class_grade, age, name, parent_permission: true)
-    when 'n'
-      student = Student.new(class_grade, age, name, parent_permission: false)
-    else
-      puts 'invalid selection. Please try again'
-      return
-    end
-    @people << student
-    puts ''
-    puts "Student is created successfully. Your ID is #{student.id}"
-  end
-
+  
   def create_rental
     if @books.empty? && @people.empty?
       puts 'There are no books and people in the system'
