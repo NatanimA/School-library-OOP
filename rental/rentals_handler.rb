@@ -24,7 +24,9 @@ class RentalsHandler
       index = number - 1
 
       puts 'PLease type your ID (See from the list of people below): '
-      @people.each { |person| puts "[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} | ID: #{person['id']}" }
+      @people.each do |person|
+        puts "[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} | ID: #{person['id']}"
+      end
       identity = gets.chomp.to_i
       individual = if identity <= 10
                      @people[identity - 1]
@@ -56,7 +58,8 @@ class RentalsHandler
       puts ''
       rental.each_with_index do |record, index|
         puts "#{index + 1}| Date: #{record['date']} | Borrower: #{record['person']['name']}
-         | Status: #{record['person']['class']} | Borrowed book: \"#{record['book']['title']}\" by #{record['book']['author']}"
+         | Status: #{record['person']['class']} | Borrowed book: \"#{record['book']['title']}\" by 
+          #{record['book']['author']}"
       end
     end
   end
