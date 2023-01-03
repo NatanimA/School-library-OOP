@@ -58,7 +58,7 @@ class RentalsHandler
       puts ''
       rental.each_with_index do |record, index|
         puts "#{index + 1}| Date: #{record['date']} | Borrower: #{record['person']['name']}
-         | Status: #{record['person']['class']} | Borrowed book: \"#{record['book']['title']}\" by 
+         | Status: #{record['person']['class']} | Borrowed book: \"#{record['book']['title']}\" by
           #{record['book']['author']}"
       end
     end

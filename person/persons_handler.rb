@@ -16,7 +16,7 @@ class PersonsHandler
     puts 'Sorry, there is no registered users!' if @people.empty?
     puts "There are #{@people.count} people in the system"
     @people.each_with_index do |person, index|
-    puts "#{index + 1})[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} | 
+      puts "#{index + 1})[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} |
                  ID: #{person['id']}"
     end
   end
