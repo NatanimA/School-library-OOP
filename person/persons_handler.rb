@@ -7,10 +7,10 @@ class PersonsHandler
   attr_accessor :people
 
   def initialize
-    @file = unless File.exists?("./jsonfiles/persons.json")
-              File.new("./jsonfiles/persons.json","w+")
+    @file = if File.exist?('./jsonfiles/persons.json')
+              './jsonfiles/persons.json'
             else
-              "./jsonfiles/persons.json"
+              File.new('./jsonfiles/persons.json', 'w+')
             end
     file_parsed = JSON.parse(File.read(@file))
     @people = file_parsed.empty? ? [] : file_parsed
@@ -20,7 +20,8 @@ class PersonsHandler
     puts 'Sorry, there is no registered users!' if @people.empty?
     puts "There are #{@people.count} people in the system"
     @people.each_with_index do |person, index|
-      puts "#{index + 1})[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} | ID: #{person['id']}"
+      puts "#{index + 1})[#{person['json_class']}] Name: #{person['name']} |
+      Age: #{person['age']} | ID: #{person['id']}"
     end
   end
 

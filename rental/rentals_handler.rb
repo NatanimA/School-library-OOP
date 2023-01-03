@@ -5,10 +5,10 @@ class RentalsHandler
   attr_accessor :rentals, :people, :books
 
   def initialize(books, person)
-    @file = unless File.exists?("./jsonfiles/rentals.json")
-              File.new("./jsonfiles/rentals.json", "w+")
+    @file = if File.exist?('./jsonfiles/rentals.json')
+              './jsonfiles/rentals.json'
             else
-              "./jsonfiles/rentals.json"
+              File.new('./jsonfiles/rentals.json', 'w+')
             end
 
     file_parsed = JSON.parse(File.read(@file))
@@ -30,7 +30,8 @@ class RentalsHandler
 
       puts 'PLease type your ID (See from the list of people below): '
       @people.each do |person|
-        puts "[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} | ID: #{person['id']}"
+        puts "[#{person['json_class']}] Name: #{person['name']} |
+        Age: #{person['age']} | ID: #{person['id']}"
       end
       identity = gets.chomp.to_i
       individual = if identity <= 10
@@ -63,7 +64,8 @@ class RentalsHandler
       puts ''
       rental.each_with_index do |record, index|
         puts "#{index + 1}| Date: #{record['date']} | Borrower: #{record['person']['name']}
-         | Status: #{record['person']['class']} | Borrowed book: \"#{record['book']['title']}\" by #{record['book']['author']}"
+         | Status: #{record['person']['class']}| Borrowed book: \"#{record['book']['title']}\"
+          | By: #{record['book']['author']}"
       end
     end
   end
