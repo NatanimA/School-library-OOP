@@ -1,16 +1,19 @@
+require 'json'
 require_relative './book'
 class BooksHandler
-  attr_accessor :books
+  attr_accessor :books, :file
 
   def initialize
-    @books = []
+    @file = './jsonfiles/books.json'
+    file_parsed = JSON.parse(File.read(@file))
+    @books = file_parsed.empty? ? [] : file_parsed
   end
 
   def list_all_books
     puts 'Sorry, No book(s) found!' if @books.empty?
     puts "There are #{@books.count} book(s) in the system"
     @books.each_with_index do |book, index|
-      puts "#{index + 1}) Book Title: \"#{book.title}\" | Author: #{book.author}"
+      puts "#{index + 1}) Book Title: \"#{book['title']}\" | Author: #{book['author']}"
     end
   end
 
@@ -22,7 +25,11 @@ class BooksHandler
 
     if title.strip != '' && author.strip != ''
       book = Book.new(title, author)
+      book = book.to_json
       @books << book
+      File.write(@file, JSON[@books])
+      puts ''
+      puts 'Book is created successfully'
       puts ''
       puts 'Book is created successfully'
     else
