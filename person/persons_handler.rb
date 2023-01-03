@@ -1,3 +1,4 @@
+require 'json'
 require_relative './person'
 require_relative './student'
 require_relative './teacher'
@@ -6,14 +7,21 @@ class PersonsHandler
   attr_accessor :people
 
   def initialize
-    @people = []
+    @file = if File.exist?('./jsonfiles/persons.json')
+              './jsonfiles/persons.json'
+            else
+              File.new('./jsonfiles/persons.json', 'w+')
+            end
+    file_parsed = JSON.parse(File.read(@file))
+    @people = file_parsed.empty? ? [] : file_parsed
   end
 
   def list_all_people
     puts 'Sorry, there is no registered users!' if @people.empty?
     puts "There are #{@people.count} people in the system"
     @people.each_with_index do |person, index|
-      puts "#{index + 1})[#{person.class}] Name: #{person.name} | Age: #{person.age} | ID: #{person.id}"
+      puts "#{index + 1})[#{person['json_class']}] Name: #{person['name']} |
+      Age: #{person['age']} | ID: #{person['id']}"
     end
   end
 
@@ -43,9 +51,11 @@ class PersonsHandler
 
   def create_teacher(specialization, age, name)
     teacher = Teacher.new(specialization, age, name)
+    teacher = teacher.to_json
     @people << teacher
+    File.write(@file, JSON[@people])
     puts ''
-    puts "Teacher is created successfully. Your ID is #{teacher.id}"
+    puts "Teacher is created successfully. Your ID is #{teacher['id']}"
   end
 
   def create_student(class_grade, age, name)
@@ -60,8 +70,10 @@ class PersonsHandler
       puts 'invalid selection. Please try again'
       return
     end
+    student = student.to_json
     @people << student
+    File.write(@file, JSON[@people])
     puts ''
-    puts "Student is created successfully. Your ID is #{student.id}"
+    puts "Student is created successfully. Your ID is #{student['id']}"
   end
 end
