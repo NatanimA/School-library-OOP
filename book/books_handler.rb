@@ -4,7 +4,11 @@ class BooksHandler
   attr_accessor :books, :file
 
   def initialize
-    @file = './jsonfiles/books.json'
+    @file = unless File.exists?("./jsonfiles/books.json")
+              File.new("./jsonfiles/books.json", "w+")
+            else
+              "./jsonfiles/books.json"
+            end
     file_parsed = JSON.parse(File.read(@file))
     @books = file_parsed.empty? ? [] : file_parsed
   end

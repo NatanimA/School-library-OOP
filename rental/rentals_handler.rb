@@ -5,7 +5,12 @@ class RentalsHandler
   attr_accessor :rentals, :people, :books
 
   def initialize(books, person)
-    @file = './jsonfiles/rentals.json'
+    @file = unless File.exists?("./jsonfiles/rentals.json")
+              File.new("./jsonfiles/rentals.json", "w+")
+            else
+              "./jsonfiles/rentals.json"
+            end
+
     file_parsed = JSON.parse(File.read(@file))
     @rentals = file_parsed.empty? ? [] : file_parsed
     @books = books
@@ -24,7 +29,9 @@ class RentalsHandler
       index = number - 1
 
       puts 'PLease type your ID (See from the list of people below): '
-      @people.each { |person| puts "[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} | ID: #{person['id']}" }
+      @people.each do |person|
+        puts "[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} | ID: #{person['id']}"
+      end
       identity = gets.chomp.to_i
       individual = if identity <= 10
                      @people[identity - 1]

@@ -7,7 +7,11 @@ class PersonsHandler
   attr_accessor :people
 
   def initialize
-    @file = './jsonfiles/persons.json'
+    @file = unless File.exists?("./jsonfiles/persons.json")
+              File.new("./jsonfiles/persons.json","w+")
+            else
+              "./jsonfiles/persons.json"
+            end
     file_parsed = JSON.parse(File.read(@file))
     @people = file_parsed.empty? ? [] : file_parsed
   end
