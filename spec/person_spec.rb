@@ -2,7 +2,6 @@ require_relative '../book/book'
 require_relative '../person/person'
 require_relative '../rental/rental'
 
-
 describe Person do
   before :each do
     @person = Person.new(29, 'John Doe')

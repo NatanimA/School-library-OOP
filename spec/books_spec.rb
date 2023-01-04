@@ -2,7 +2,6 @@ require_relative '../rental/rental'
 require_relative '../person/student'
 require_relative '../book/book'
 
-
 describe Book do
   before :each do
     @book = Book.new('The Power of now', 'Eckhart Tolle')
