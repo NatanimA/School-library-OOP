@@ -1,1 +1,2 @@
-[{"json_class":"Book","title":"Game of thrones","author":"Neo"},{"json_class":"Book","title":"Night at the museum","author":"Natanim"},{"json_class":"Book","title":"Last Dance","author":"last"}]
+[{"json_class":"Book","title":"Game of thrones","author":"Neo"},{"json_class":"Book","title":"Night at the museum","author":"Natanim"},{"json_class":"Book","title":"Last Dance","author":"last"},
+{"json_class":"Book","title":"Empire","author":"John"}]
